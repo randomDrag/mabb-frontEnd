@@ -1,0 +1,96 @@
+.secF-container {
+  display: flex;
+  border: 2px solid red;
+  width: 100%;
+  height: 100%;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.right-div {
+  border: 2px solid blue;
+  width: 100%;
+  height: 100%;
+  flex: 2;
+}
+.left-div {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.center-div {
+  width: 100%;
+  height: 100%;
+  flex: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secF-social {
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 0.5rem;
+}
+
+.secF-social a {
+  padding: 0.5rem;
+}
+
+.secF-social-icon {
+  color: #000;
+  font-size: 1.5rem;
+}
+
+.secF-social-icon:hover {
+  color: #5e3aef;
+  font-size: 2rem;
+  transition: all 0.5s ease;
+}
+
+.MABB-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.MABB-info img {
+  height: 300px;
+  width: 300px;
+  padding: 20px;
+  display: none;
+}
+
+.MABB-info h1 {
+  font-family: 'Nunito';
+  font-weight: 800;
+  font-size: 5rem;
+  line-height: 50px;
+}
+
+.MABB-info h2 {
+  font-family: 'Nunito';
+  font-weight: 800;
+  font-size: 6rem;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+
+.MABB-info em {
+  text-align: center;
+  font-family: 'Nunito';
+  font-style: normal;
+  color: #5e3aef;
+  font-weight: 600;
+  display: none;
+  opacity: 0;
+}

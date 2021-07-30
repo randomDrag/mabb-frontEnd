@@ -10,10 +10,13 @@
 }
 
 .right-div {
-  border: 2px solid blue;
   width: 100%;
   height: 100%;
   flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .left-div {
   width: 100%;
@@ -67,7 +70,7 @@
   height: 300px;
   width: 300px;
   padding: 20px;
-  display: none;
+  visibility: visible;
 }
 
 .MABB-info h1 {
@@ -93,4 +96,31 @@
   font-weight: 600;
   display: none;
   opacity: 0;
+}
+
+.Mabb-social {
+  justify-self: center;
+  margin: 15px;
+  padding: 10px;
+}
+
+.Mabb-graphic {
+  justify-self: flex-end;
+  margin: 15px;
+  padding: 10px;
+}
+
+.Mabb-infinty {
+  justify-self: flex-start;
+  margin: 15px;
+  padding: 10px;
+}
+
+.Mabb-infinty h5,
+.Mabb-social h5,
+.Mabb-graphic h5 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Nunito';
+  font-weight: 700;
 }

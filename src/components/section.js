@@ -4,7 +4,13 @@ import '../css/firstSection.css';
 
 import MabbIcon from '../images/icon.svg';
 
+import Lottie from 'react-lottie';
+
 import { gsap, Power3 } from 'gsap';
+
+import MabbSocial from '../raw/social.json';
+import MabbInfity from '../raw/infinty.json';
+import MabbGraphic from '../raw/graphic.json';
 
 class FirstSection extends React.Component {
   constructor(props) {
@@ -17,12 +23,14 @@ class FirstSection extends React.Component {
     this.title = null;
     this.tagLine = null;
     this.socialicon = null;
+    this.rightDiv = null;
   }
 
   componentDidMount() {
     //animation
 
     const tl = gsap.timeline();
+    const tl2 = gsap.timeline();
     tl.from(this.welcomeMabb, {
       opacity: 0,
       scale: 1.5,
@@ -39,31 +47,22 @@ class FirstSection extends React.Component {
         y: '100px',
         ease: Power3.easeOut,
       })
-      .from(this.title, { y: '-400px', opacity: 0 })
-      .to(this.title, {
-        opacity: 1,
-        duration: 2,
-        display: 'block',
-        ease: Power3.easeIn,
+      .from(this.title, {
+        y: '-200px',
+        opacity: 0,
+        duration: 1.5,
+        ease: Power3.easeInOut,
       })
       .from(this.mabbImage, {
-        opacity: 0,
-        display: 'block',
-        scale: 0.2,
-        delay: -1,
-      })
-      .to(this.mabbImage, {
-        display: 'block',
-        opacity: 1,
-        scale: 1,
-        delay: -1,
-        duration: 1.5,
+        display: 'none',
+        y: '-100px',
+        duration: 0.5,
         ease: Power3.easeIn,
       })
       .to(this.tagLine, {
         display: 'block',
         opacity: 1,
-        duration: 2,
+        duration: 0.5,
         ease: Power3.easeIn,
       })
       .from(this.socialicon, {
@@ -71,7 +70,21 @@ class FirstSection extends React.Component {
         display: 'none',
         duration: 1.5,
         ease: Power3.easeIn,
+      })
+      .from(this.rightDiv, {
+        opacity: 0,
+
+        duration: 0.5,
+        ease: Power3.easeIn,
       });
+
+    tl2
+      .from(this.mabbImage, { scale: 0.9, ease: Power3.easeIn })
+      .to(this.mabbImage, { scale: 1.1, ease: Power3.easeOut })
+      .to(this.mabbImage, { scale: 0.9, ease: Power3.easeIn })
+      .duration(6)
+      .repeat(-1)
+      .delay(2);
   }
 
   render() {
@@ -120,7 +133,66 @@ class FirstSection extends React.Component {
             </div>
           </div>
 
-          <div className='right-div'></div>
+          <div
+            className='right-div'
+            ref={(rightDiv) => (this.rightDiv = rightDiv)}
+          >
+            <div className='Mabb-infinty'>
+              <Lottie
+                options={{
+                  loop: true,
+                  autoplay: true,
+                  animationData: MabbInfity,
+                  rendererSettings: {
+                    preserveAspectRatio: 'xMidYMid slice',
+                    Mode: 'bounce',
+                  },
+                }}
+                width={150}
+                height={150}
+                isClickToPauseDisabled='true'
+                direction={-1}
+              />
+              <h5>Mabb infinty</h5>
+            </div>
+
+            <div className='Mabb-social'>
+              <Lottie
+                options={{
+                  loop: true,
+                  autoplay: true,
+                  animationData: MabbSocial,
+                  rendererSettings: {
+                    preserveAspectRatio: 'xMidYMid slice',
+                    Mode: 'bounce',
+                  },
+                }}
+                width={150}
+                height={150}
+                isClickToPauseDisabled='true'
+                direction={-1}
+              />
+              <h5>Mabb Social</h5>
+            </div>
+            <div className='Mabb-graphic'>
+              <Lottie
+                options={{
+                  loop: true,
+                  autoplay: true,
+                  animationData: MabbGraphic,
+                  rendererSettings: {
+                    preserveAspectRatio: 'xMidYMid slice',
+                    Mode: 'bounce',
+                  },
+                }}
+                width={150}
+                height={150}
+                isClickToPauseDisabled='true'
+                direction={-1}
+              />
+              <h5>Mabb GRAPHIC</h5>
+            </div>
+          </div>
         </div>
       </section>
     );

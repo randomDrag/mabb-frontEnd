@@ -150,7 +150,7 @@ class FirstSection extends React.Component {
                 }}
                 width={150}
                 height={150}
-                isClickToPauseDisabled='true'
+                isClickToPauseDisabled={true}
                 direction={-1}
               />
               <h5>Mabb infinty</h5>
@@ -169,7 +169,7 @@ class FirstSection extends React.Component {
                 }}
                 width={150}
                 height={150}
-                isClickToPauseDisabled='true'
+                isClickToPauseDisabled={true}
                 direction={-1}
               />
               <h5>Mabb Social</h5>
@@ -187,7 +187,7 @@ class FirstSection extends React.Component {
                 }}
                 width={150}
                 height={150}
-                isClickToPauseDisabled='true'
+                isClickToPauseDisabled={true}
                 direction={-1}
               />
               <h5>Mabb GRAPHIC</h5>

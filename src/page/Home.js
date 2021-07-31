@@ -7,6 +7,7 @@ import { gsap } from 'gsap';
 
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Contactus from './Contact.mabb.group';
+import AboutClient from './mabb.group.client';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,11 +20,7 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    const elem = gsap.utils.toArray(this.container);
-
     let elems = document.querySelectorAll('section');
-
-    console.log(elems.length);
 
     if (elems != null) {
       elems.forEach((sec) => {
@@ -32,25 +29,24 @@ class Home extends React.Component {
           start: 'top top',
           pin: true,
           pinSpacing: false,
-          scrub: 5,
         });
-        console.log(sec);
       });
     }
 
     ScrollTrigger.create({
-      snap: 1 / 5, // snap whole page to the closest section!
+      snap: 1 / 6, // snap whole page to the closest section!
     });
   }
 
   render() {
     return (
-      <div ref={(cont) => (this.container = cont)}>
-        <FirstSection ref={(sec) => (this.sections[0] = sec)} />
-        <AboutMabb ref={(sec) => (this.sections[1] = sec)} />
-        <Mabbservice ref={(sec) => (this.sections[2] = sec)} />
+      <>
+        <FirstSection />
+        <AboutMabb />
+        <Mabbservice />
         <Contactus />
-      </div>
+        <AboutClient />
+      </>
     );
   }
 }

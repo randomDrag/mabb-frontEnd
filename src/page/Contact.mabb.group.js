@@ -38,12 +38,17 @@ class Contactus extends React.Component {
               ></iframe>
             </div>
             <div className='contact-button'>
-              <a href='http://'>
-                <i class='bi bi-whatsapp' style={{ fontSize: '2rem' }}></i>
+              <a href='http://' className='button-icon'>
+                <i className='bi bi-whatsapp' style={{ fontSize: '2rem' }}></i>
+              </a>
+              <a href='' className='button-icon'>
                 <i
-                  class='bi bi-telephone-fill'
+                  className='bi bi-telephone-fill'
                   style={{ fontSize: '2rem' }}
                 ></i>
+              </a>
+              <a href='' className='button-icon'>
+                <i className='bi bi-mailbox2' style={{ fontSize: '2rem' }}></i>
               </a>
             </div>
           </div>

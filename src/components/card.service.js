@@ -13,23 +13,34 @@ class CardService extends React.Component {
     this.cardAbout = null;
   }
   mouseEnterhandel() {
-    gsap.to(this.mainCard, {
+    const tl = gsap.timeline();
+    tl.to(this.mainCard, {
       height: '400px',
       duration: 0.5,
       ease: Power3.easeInOut,
+    }).to(this.cardAbout, {
+      opacity: 1,
+      display: 'block',
+      duration: 0.5,
+      ease: Power3.easeIn,
     });
-    console.log('m o');
   }
 
   mouseOuthandel() {
     if (this.mainCard != null) {
-      gsap.to(this.mainCard, {
+      const tl = gsap.timeline();
+
+      tl.to(this.mainCard, {
         height: '100px',
         duration: 0.5,
         ease: Power3.easeIn,
+      }).to(this.cardAbout, {
+        opacity: 0,
+        display: 'none',
+        duration: 0.5,
+        ease: Power3.easeOut,
       });
     }
-    console.log('o');
   }
 
   render() {
@@ -41,10 +52,10 @@ class CardService extends React.Component {
         onMouseLeave={this.mouseOuthandel}
       >
         <div className='card-heading'>
-          <h1>heading</h1>
+          <h1>{this.props.cardheading}</h1>
         </div>
         <div className='card-about' ref={(card) => (this.cardAbout = card)}>
-          <em>body text will pressent</em>
+          <em>{this.props.body}</em>
         </div>
       </div>
     );

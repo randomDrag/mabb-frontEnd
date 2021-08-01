@@ -1,0 +1,29 @@
+.member-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.member-heading {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.member-heading h1 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: 800;
+}
+
+.member-info {
+  width: 100%;
+  height: 100%;
+  flex: 4;
+}

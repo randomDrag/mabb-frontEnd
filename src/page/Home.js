@@ -8,6 +8,8 @@ import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Contactus from './Contact.mabb.group';
 import AboutClient from './mabb.group.client';
+import Founder from './Founder.all';
+import Members from './members.mabb';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,7 +36,7 @@ class Home extends React.Component {
     }
 
     ScrollTrigger.create({
-      snap: 1 / 6, // snap whole page to the closest section!
+      snap: 0 / elems.length, // snap whole page to the closest section!
     });
   }
 
@@ -46,6 +48,8 @@ class Home extends React.Component {
         <Mabbservice />
         <Contactus />
         <AboutClient />
+        <Founder />
+        <Members />
       </>
     );
   }

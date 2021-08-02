@@ -24,6 +24,7 @@
   font-weight: 700;
   font-size: 3rem;
   color: #fff;
+  text-align: center;
 }
 
 .about-text {
@@ -50,4 +51,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 575.98px) {
+  .Mabb-about-container {
+    min-height: 100%;
+  }
+  .about-heading h2 {
+    padding: 10px;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  .AboutMabb-vertical {
+    height: auto;
+    flex-direction: column;
+  }
+  .about-text p {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
 }

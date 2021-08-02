@@ -187,4 +187,7 @@
   .navbar-brand {
     font-size: 1.25rem;
   }
+  nav {
+    display: none;
+  }
 }

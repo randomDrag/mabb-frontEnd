@@ -123,3 +123,43 @@
   font-family: 'Nunito';
   font-weight: 700;
 }
+
+@media (max-width: 575.98px) {
+  .secF-container {
+    flex-direction: column;
+  }
+
+  .MABB-info img {
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+  }
+
+  .MABB-info h1 {
+    font-size: 2.5rem;
+    line-height: 1.5rem;
+  }
+
+  .MABB-info h2 {
+    font-size: 2.5rem;
+    line-height: 1.5rem;
+  }
+
+  .MABB-info em {
+    font-size: 1rem;
+  }
+
+  .right-div {
+    flex: 1;
+  }
+  .left-div {
+    flex: 1;
+  }
+  .center-div {
+    flex: 1;
+  }
+
+  .secF-social {
+    flex-direction: row;
+  }
+}

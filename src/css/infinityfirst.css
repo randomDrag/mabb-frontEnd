@@ -1,0 +1,12 @@
+.video-bg {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 62%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -9;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0.5;
+}

@@ -25,7 +25,13 @@ class Navbar extends React.Component {
     return (
       <nav
         className='navbar navbar-expand-sm  w-100 '
-        style={{ position: 'relative', top: '0', zIndex: '3', padding: '0' }}
+        style={{
+          position: 'sticky',
+          top: '0',
+          zIndex: '3',
+          padding: '0',
+          background: 'rgba(255, 255, 255, 0.8)',
+        }}
       >
         <div className='d-flex w-100'>
           <div className='align-self-center'>

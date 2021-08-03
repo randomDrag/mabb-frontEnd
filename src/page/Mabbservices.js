@@ -29,7 +29,10 @@ class Services extends React.Component {
               />
             </div>
             <div className='srv-container'>
-              <CardService />
+              <CardService
+                cardheading='service'
+                body='jaijdi iahsjidha iahuidhsu iaudhsuhaj auisghuhdau aiusduahsuhd '
+              />
               <CardService />
               <CardService />
             </div>

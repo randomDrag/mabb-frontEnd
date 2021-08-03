@@ -10,6 +10,7 @@ import Contactus from './Contact.mabb.group';
 import AboutClient from './mabb.group.client';
 import Founder from './Founder.all';
 import Members from './members.mabb';
+import Sitemap from '../components/sitemap';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,10 +47,14 @@ class Home extends React.Component {
         <FirstSection />
         <AboutMabb />
         <Mabbservice />
-        <Contactus />
+
         <AboutClient />
+        <Contactus />
         <Founder />
         <Members />
+        <section className='vh-100 w-100' style={{ background: 'royalblue' }}>
+          <Sitemap />
+        </section>
       </>
     );
   }

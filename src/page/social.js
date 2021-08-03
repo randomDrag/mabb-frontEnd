@@ -1,11 +1,11 @@
-import React from 'react';
-import AboutAll from '../components/Aboutus.all';
-import Portfolio from '../components/Portfolio';
 import InfinityFirst from './inf.home.main';
 import aboutusInf from '../raw/aboutus_inf.json';
 import ServicesAll from '../components/ServicesAll';
+import React from 'react';
+import AboutAll from '../components/Aboutus.all';
+import Portfolio from '../components/Portfolio';
 
-class Infinity extends React.Component {
+class Social extends React.Component {
   render() {
     return (
       <>
@@ -25,4 +25,4 @@ class Infinity extends React.Component {
   }
 }
 
-export default Infinity;
+export default Social;

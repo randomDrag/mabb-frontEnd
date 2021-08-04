@@ -22,6 +22,7 @@ class Navbar extends React.Component {
   //main
 
   render() {
+    console.log(this.props);
     return (
       <nav
         className='navbar navbar-expand-sm  w-100 '

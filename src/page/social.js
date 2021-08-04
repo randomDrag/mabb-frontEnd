@@ -1,14 +1,23 @@
-import aboutusInf from '../raw/aboutus_inf.json';
 import ServicesAll from '../components/ServicesAll';
 import React from 'react';
-import AboutAll from '../components/Aboutus.all';
+import aboutAni from '../raw/socialAboutus.json';
 import { Carousel, CarouselItem } from 'react-bootstrap';
 import '../css/social.main.css';
 import ani from '../raw/socialMain.json';
 import Lottie from 'react-lottie';
 import ClientItem from '../components/about.client.item';
+import { data } from '../const/data';
+import bg from '../raw/socialbg.json';
 
 class Social extends React.Component {
+  servicebox(props) {
+    return (
+      <div className='service-opt' style={{ background: props.background }}>
+        <h2>{props.name}</h2>
+      </div>
+    );
+  }
+
   render() {
     return (
       <>
@@ -38,13 +47,57 @@ class Social extends React.Component {
           </div>
         </section>
 
-        <section className='vh-100 w-100' style={{ background: '#B7B7B7' }}>
-          <AboutAll heading='ABOUT US' animationData={aboutusInf} />
+        <section
+          className='vh-100 w-100'
+          style={{ background: 'rgb(248, 247, 247)' }}
+        >
+          <div className='About-social'>
+            <div className='about-logo'>
+              <Lottie
+                options={{
+                  loop: true,
+                  autoplay: true,
+                  animationData: aboutAni,
+                  rendererSettings: {
+                    Mode: 'bounce',
+                  },
+                }}
+                isClickToPauseDisabled={true}
+                direction={-1}
+              />
+            </div>
+            <div className='about-infoi'>
+              <div className='about-box'>
+                <h1>ABOUT US</h1>
+                <div className='about-p'>
+                  <p>{data.SOCIAL_ABOUTUS}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
-        <section className='vh-100 w-100' style={{ background: '#FFCBD' }}>
-          <ServicesAll />
+        <section
+          className='vh-100 w-100'
+          style={{ background: 'rgb(248, 247, 247)' }}
+        >
+          <div className='social-service-container'>
+            <div className='social-service-heading'>
+              <h1>our Services</h1>
+            </div>
+            <div className='social-service-box'>
+              <this.servicebox name='hello' />
+              <this.servicebox name='hello' />
+              <this.servicebox name='hello' />
+              <this.servicebox name='hello' />
+              <this.servicebox name='hello' />
+              <this.servicebox name='hello' />
+            </div>
+          </div>
         </section>
-        <section className='vh-100 w-100' style={{ background: '#FFCBD' }}>
+        <section
+          className='vh-100 w-100'
+          style={{ background: 'rgb(248, 247, 247)' }}
+        >
           <Carousel
             fade
             className='carousel-inner'
@@ -68,6 +121,7 @@ class Social extends React.Component {
             </CarouselItem>
           </Carousel>
         </section>
+        <section className='logo-social'></section>
       </>
     );
   }

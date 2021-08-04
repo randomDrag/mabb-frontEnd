@@ -2,7 +2,6 @@ import React from 'react';
 import { Carousel, CarouselItem } from 'react-bootstrap';
 
 import ClientItem from '../components/about.client.item';
-import Sitemap from '../components/sitemap';
 
 import '../css/member.mabbs.css';
 

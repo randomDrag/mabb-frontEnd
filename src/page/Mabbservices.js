@@ -3,6 +3,7 @@ import '../css/mabb.group.service.css';
 import Lottie from 'react-lottie';
 import servicesAnimation from '../raw/services.json';
 import CardService from '../components/card.service';
+import { data } from '../const/data';
 
 class Services extends React.Component {
   render() {
@@ -30,11 +31,17 @@ class Services extends React.Component {
             </div>
             <div className='srv-container'>
               <CardService
-                cardheading='service'
-                body='jaijdi iahsjidha iahuidhsu iaudhsuhaj auisghuhdau aiusduahsuhd '
+                cardheading={data.SERVICE_INF.heading}
+                body={data.SERVICE_INF.body}
               />
-              <CardService />
-              <CardService />
+              <CardService
+                cardheading={data.SERVICE_SOCIAL.heading}
+                body={data.SERVICE_SOCIAL.body}
+              />
+              <CardService
+                cardheading={data.SERVICES_GRAPHIC.heading}
+                body={data.SERVICES_GRAPHIC.body}
+              />
             </div>
           </div>
         </div>

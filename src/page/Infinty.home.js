@@ -32,9 +32,6 @@ class Infinity extends React.Component {
         <section className='vh-100 w-100 portfolio-sec'>
           <Portfolio DataArr={[1, 2, 3]} />
         </section>
-        <footer>
-          <Sitemap />
-        </footer>
       </>
     );
   }

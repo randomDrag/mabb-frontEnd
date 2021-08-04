@@ -1,17 +1,30 @@
 .sitemap-container {
   width: 100%;
-  height: 500px;
+  height: 400px;
   background: rgb(192, 192, 192);
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.top-box {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   flex-direction: row;
+}
+
+.bottom-box {
+  height: 70px;
+  width: 100%;
 }
 
 .first,
 .second,
-.third,
-.fourth {
+.third {
   width: 100%;
   height: 100%;
   display: flex;
@@ -26,7 +39,8 @@
   text-transform: uppercase;
   flex: 1;
   font-weight: 500;
-  margin-top: 20%;
+  font-weight: 700;
+  padding: 30px;
 }
 .links {
   width: 100%;
@@ -44,4 +58,60 @@
   text-transform: uppercase;
   text-decoration: none;
   line-height: 2rem;
+}
+
+.Form-button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 3px;
+}
+
+.Form-button button {
+  background-color: rgb(22, 122, 61);
+  outline: none;
+  width: 100px;
+  height: 35px;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+}
+
+.form-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+.sitemap-first {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sitemap-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  justify-self: flex-start;
+  padding: 20px;
+}
+.sitemap-address {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 35px;
+}
+
+.sitemap-logo img {
+  width: 64px;
+  height: 64px;
 }

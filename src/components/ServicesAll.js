@@ -9,7 +9,7 @@ class ServicesAll extends React.Component {
   servicebox(props) {
     return (
       <div className='cirlce' style={{ background: props.background }}>
-        <h2>{props.name}</h2>
+        <h2 style={{ color: '#FFF' }}>{props.name}</h2>
       </div>
     );
   }
@@ -21,7 +21,10 @@ class ServicesAll extends React.Component {
           <h1> Our services</h1>
         </div>
         <div className='service-dit-container '>
-          <this.servicebox name='devlopment' background='orange' />
+          <this.servicebox
+            name='devlopment'
+            background='linear-gradient(180deg, rgba(1,40,57,1) 59%, rgba(104,164,190,1) 59%)'
+          />
         </div>
       </div>
     );

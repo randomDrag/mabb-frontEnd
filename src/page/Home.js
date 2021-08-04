@@ -47,14 +47,10 @@ class Home extends React.Component {
         <FirstSection />
         <AboutMabb />
         <Mabbservice />
-
         <AboutClient />
         <Contactus />
         <Founder />
         <Members />
-        <section className='vh-100 w-100' style={{ background: 'royalblue' }}>
-          <Sitemap />
-        </section>
       </>
     );
   }

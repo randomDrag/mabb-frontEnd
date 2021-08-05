@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 import icon from '../images/icon.svg';
 
 import '../css/navbar.css';
+
+import { connect } from 'react-redux';
+
+import MabbGroup from '../images/icon.svg';
+// import MabbSocial from '../images/social.svg';
+import MabbInfinity from '../images/infinity.svg';
+import MabbGraphic from '../images/graphic.svg';
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
@@ -19,10 +26,28 @@ class Navbar extends React.Component {
     );
   }
 
+  componentDidMount() {
+    this.navBarIconChanger();
+  }
+
+  navBarIconChanger() {
+    const { isNav } = this.props;
+    console.log(isNav.toString());
+    switch (isNav.toString()) {
+      case 'MabbGroup':
+        return MabbGroup;
+      case 'MabbSocial':
+        return MabbGroup;
+      case 'MabbInfinity':
+        return MabbInfinity;
+
+      default:
+    }
+  }
+
   //main
 
   render() {
-    console.log(this.props);
     return (
       <nav
         className='navbar navbar-expand-sm  w-100 '
@@ -39,7 +64,7 @@ class Navbar extends React.Component {
             <div className='navbar-brand nav-des '>
               {' '}
               <img
-                src={icon}
+                src={this.navBarIconChanger()}
                 alt='Mabb icon'
                 width='100%'
                 height='100%'
@@ -89,5 +114,10 @@ class Navbar extends React.Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    isNav: state.navbarIcon.navIco,
+  };
+};
 
-export default Navbar;
+export default connect(mapStateToProps)(Navbar);

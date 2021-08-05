@@ -7,9 +7,13 @@ import ani from '../raw/socialMain.json';
 import Lottie from 'react-lottie';
 import ClientItem from '../components/about.client.item';
 import { data } from '../const/data';
-import bg from '../raw/socialbg.json';
-
+import { navIcon } from '../actions';
+import { connect } from 'react-redux';
 class Social extends React.Component {
+  componentDidMount() {
+    this.props.navIcon({ navIco: 'MabbSocial' });
+  }
+
   servicebox(props) {
     return (
       <div className='service-opt' style={{ background: props.background }}>
@@ -127,4 +131,4 @@ class Social extends React.Component {
   }
 }
 
-export default Social;
+export default connect(null, { navIcon })(Social);

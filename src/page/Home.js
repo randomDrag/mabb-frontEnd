@@ -10,7 +10,8 @@ import Contactus from './Contact.mabb.group';
 import AboutClient from './mabb.group.client';
 import Founder from './Founder.all';
 import Members from './members.mabb';
-import Sitemap from '../components/sitemap';
+import { connect } from 'react-redux';
+import { navIcon } from '../actions';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,6 +24,8 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
+    this.props.navIcon({ navIco: 'MabbGroup' });
+
     let elems = document.querySelectorAll('section');
 
     if (elems != null) {
@@ -56,4 +59,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default connect(null, { navIcon })(Home);

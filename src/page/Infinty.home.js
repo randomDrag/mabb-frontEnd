@@ -5,8 +5,12 @@ import InfinityFirst from './inf.home.main';
 import aboutusInf from '../raw/aboutus_inf.json';
 import ServicesAll from '../components/ServicesAll';
 import '../css/portfoilo.sec.css';
-import Sitemap from '../components/sitemap';
+import { connect } from 'react-redux';
+import { navIcon } from '../actions';
 class Infinity extends React.Component {
+  componentDidMount() {
+    this.props.navIcon({ navIco: 'MabbInfinity' });
+  }
   render() {
     return (
       <>
@@ -37,4 +41,4 @@ class Infinity extends React.Component {
   }
 }
 
-export default Infinity;
+export default connect(null, { navIcon })(Infinity);

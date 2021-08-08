@@ -4,8 +4,42 @@ import { Carousel, CarouselItem } from 'react-bootstrap';
 import ClientItem from '../components/about.client.item';
 
 import '../css/client.group.css';
+import { connect } from 'react-redux';
+
+import { fetchAllClient } from '../actions';
+
+import male from '../images/male.svg';
+
+import F from '../images/F.svg';
 
 class AboutClient extends React.Component {
+  componentDidMount() {
+    this.props.fetchAllClient();
+  }
+
+  CardItem() {
+    const { clientData } = this.props;
+
+    return clientData.map((data) => {
+      return (
+        <CarouselItem
+          style={{
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <ClientItem
+            key={data._id}
+            heading={data.Name}
+            info={data.FEEDBACK}
+            email={data.EMAIL}
+            img={data.GENDER == 'M' ? male : F}
+          />
+        </CarouselItem>
+      );
+    });
+  }
+
   render() {
     return (
       <section className='vh-100 w-100' style={{ background: 'Pink' }}>
@@ -14,26 +48,17 @@ class AboutClient extends React.Component {
           className='carousel-inner'
           style={{ width: '100%', height: '100vh' }}
         >
-          <CarouselItem
-            style={{
-              width: '100%',
-              height: '100%',
-            }}
-          >
-            <ClientItem key='1' />
-          </CarouselItem>
-          <CarouselItem
-            style={{
-              width: '100%',
-              height: '100%',
-            }}
-          >
-            <ClientItem key='1' />
-          </CarouselItem>
+          {this.CardItem()}
         </Carousel>
       </section>
     );
   }
 }
 
-export default AboutClient;
+const mapStateToProps = (state) => {
+  return {
+    clientData: Object.values(state.clientData),
+  };
+};
+
+export default connect(mapStateToProps, { fetchAllClient })(AboutClient);

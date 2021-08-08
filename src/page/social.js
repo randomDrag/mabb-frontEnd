@@ -7,11 +7,13 @@ import ani from '../raw/socialMain.json';
 import Lottie from 'react-lottie';
 import ClientItem from '../components/about.client.item';
 import { data } from '../const/data';
-import { navIcon } from '../actions';
+import { navIcon, fetchAllSocialClient } from '../actions';
 import { connect } from 'react-redux';
+
 class Social extends React.Component {
   componentDidMount() {
     this.props.navIcon({ navIco: 'MabbSocial' });
+    this.props.fetchAllSocialClient();
   }
 
   servicebox(props) {
@@ -20,6 +22,29 @@ class Social extends React.Component {
         <h2>{props.name}</h2>
       </div>
     );
+  }
+
+  CardItem() {
+    const { client } = this.props;
+
+    return client.map((data) => {
+      return (
+        <CarouselItem
+          style={{
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <ClientItem
+            key={data._id}
+            heading={data.NAME}
+            info={data.FEEDBACK}
+            email={data.TYPE}
+            img={data.LOGO}
+          />
+        </CarouselItem>
+      );
+    });
   }
 
   render() {
@@ -107,22 +132,7 @@ class Social extends React.Component {
             className='carousel-inner'
             style={{ width: '100%', height: '100vh' }}
           >
-            <CarouselItem
-              style={{
-                width: '100%',
-                height: '100%',
-              }}
-            >
-              <ClientItem key='1' />
-            </CarouselItem>
-            <CarouselItem
-              style={{
-                width: '100%',
-                height: '100%',
-              }}
-            >
-              <ClientItem key='1' />
-            </CarouselItem>
+            {this.CardItem()}
           </Carousel>
         </section>
         <section className='logo-social'></section>
@@ -131,4 +141,12 @@ class Social extends React.Component {
   }
 }
 
-export default connect(null, { navIcon })(Social);
+const mapStateToProps = (state) => {
+  return {
+    client: Object.values(state.socialClient),
+  };
+};
+
+export default connect(mapStateToProps, { navIcon, fetchAllSocialClient })(
+  Social
+);

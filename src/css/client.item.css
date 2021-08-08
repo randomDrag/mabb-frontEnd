@@ -34,6 +34,10 @@
 }
 .info-contaner-heading {
   padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .info-contaner-heading h1 {
@@ -41,6 +45,7 @@
   justify-self: flex-start;
   text-align: center;
 
+  width: 100%;
   font-weight: 900;
   text-transform: uppercase;
   line-height: 1.2rem;
@@ -48,6 +53,9 @@
 
 .info-contaner-heading em {
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
+
+  width: 100%;
 }
 
 .info-container p {

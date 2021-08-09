@@ -1,10 +1,17 @@
 import React from 'react';
 import '../css/sitemap.css';
 import { Link } from 'react-router-dom';
-import { Form, Button, Col } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import mabbfroup from '../images/icon.svg';
+import { getDate } from '../actions';
+import { connect } from 'react-redux';
 class Sitemap extends React.Component {
+  componentDidMount() {
+    this.props.getDate(this.props.getDate);
+  }
+
   render() {
+    console.log(this.props);
     return (
       <div className='sitemap-container'>
         <div className='top-box'>
@@ -63,10 +70,18 @@ class Sitemap extends React.Component {
             </div>
           </div>
         </div>
-        <div className='bottom-box'>hello</div>
+        <div className='bottom-box'>
+          <em>copyright ©{this.props.date - 1 + '-' + this.props.date}</em>
+        </div>
       </div>
     );
   }
 }
 
-export default Sitemap;
+const mapStateToProps = (state) => {
+  return {
+    date: state.getdate.date,
+  };
+};
+
+export default connect(mapStateToProps, { getDate })(Sitemap);

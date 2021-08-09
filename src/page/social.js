@@ -1,4 +1,3 @@
-import ServicesAll from '../components/ServicesAll';
 import React from 'react';
 import aboutAni from '../raw/socialAboutus.json';
 import { Carousel, CarouselItem } from 'react-bootstrap';
@@ -7,13 +6,18 @@ import ani from '../raw/socialMain.json';
 import Lottie from 'react-lottie';
 import ClientItem from '../components/about.client.item';
 import { data } from '../const/data';
-import { navIcon, fetchAllSocialClient } from '../actions';
+import {
+  navIcon,
+  fetchAllSocialClient,
+  fetchAllSocialService,
+} from '../actions';
 import { connect } from 'react-redux';
 
 class Social extends React.Component {
   componentDidMount() {
     this.props.navIcon({ navIco: 'MabbSocial' });
     this.props.fetchAllSocialClient();
+    this.props.fetchAllSocialService();
   }
 
   servicebox(props) {
@@ -22,6 +26,17 @@ class Social extends React.Component {
         <h2>{props.name}</h2>
       </div>
     );
+  }
+
+  socialLogo() {
+    const { client } = this.props;
+    return client.map((data) => {
+      return (
+        <div key={data._id} className='logo-img-box'>
+          <img src={data.LOGO} alt={data.NAME} />
+        </div>
+      );
+    });
   }
 
   CardItem() {
@@ -44,6 +59,14 @@ class Social extends React.Component {
           />
         </CarouselItem>
       );
+    });
+  }
+
+  serbox() {
+    const { ser } = this.props;
+
+    return ser.map((data) => {
+      return <this.servicebox name={data.NAME} key={data._id} />;
     });
   }
 
@@ -113,14 +136,7 @@ class Social extends React.Component {
             <div className='social-service-heading'>
               <h1>our Services</h1>
             </div>
-            <div className='social-service-box'>
-              <this.servicebox name='hello' />
-              <this.servicebox name='hello' />
-              <this.servicebox name='hello' />
-              <this.servicebox name='hello' />
-              <this.servicebox name='hello' />
-              <this.servicebox name='hello' />
-            </div>
+            <div className='social-service-box'>{this.serbox()}</div>
           </div>
         </section>
         <section
@@ -135,7 +151,7 @@ class Social extends React.Component {
             {this.CardItem()}
           </Carousel>
         </section>
-        <section className='logo-social'></section>
+        <section className='logo-social'>{this.socialLogo()}</section>
       </>
     );
   }
@@ -144,9 +160,12 @@ class Social extends React.Component {
 const mapStateToProps = (state) => {
   return {
     client: Object.values(state.socialClient),
+    ser: Object.values(state.socialService),
   };
 };
 
-export default connect(mapStateToProps, { navIcon, fetchAllSocialClient })(
-  Social
-);
+export default connect(mapStateToProps, {
+  navIcon,
+  fetchAllSocialClient,
+  fetchAllSocialService,
+})(Social);

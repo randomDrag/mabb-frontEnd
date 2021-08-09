@@ -2,8 +2,10 @@ import { api } from '../api';
 import {
   ALL_CLIENT_FETCH,
   ALL_SOCIAL_CLIENT,
+  ALL_SOCIAL_SERVICE,
   ALL_TEAM_FETCH,
   NAVBAR_ICON,
+  DATE,
 } from './const';
 
 export const navIcon = (data) => {
@@ -41,6 +43,28 @@ export const fetchAllSocialClient = () => {
 
     dispatch({
       type: ALL_SOCIAL_CLIENT,
+      payload: response.data,
+    });
+  };
+};
+
+export const fetchAllSocialService = () => {
+  return async (dispatch) => {
+    const response = await api.get('/social/service');
+
+    dispatch({
+      type: ALL_SOCIAL_SERVICE,
+      payload: response.data,
+    });
+  };
+};
+
+export const getDate = () => {
+  return async (dispatch) => {
+    const response = await api.get('/social/date');
+
+    dispatch({
+      type: DATE,
       payload: response.data,
     });
   };

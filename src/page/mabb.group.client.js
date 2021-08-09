@@ -30,7 +30,7 @@ class AboutClient extends React.Component {
         >
           <ClientItem
             key={data._id}
-            heading={data.Name}
+            heading={data.NAME}
             info={data.FEEDBACK}
             email={data.EMAIL}
             img={data.GENDER == 'M' ? male : F}

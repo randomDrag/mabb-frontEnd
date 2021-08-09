@@ -93,7 +93,6 @@ class Social extends React.Component {
                   },
                 }}
                 isClickToPauseDisabled={true}
-                direction={-1}
               />
             </div>
           </div>
@@ -115,7 +114,6 @@ class Social extends React.Component {
                   },
                 }}
                 isClickToPauseDisabled={true}
-                direction={-1}
               />
             </div>
             <div className='about-infoi'>

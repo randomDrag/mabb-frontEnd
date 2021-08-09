@@ -1,7 +1,7 @@
 .sitemap-container {
   width: 100%;
   height: 400px;
-  background: rgb(192, 192, 192);
+  background: #6237da;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,8 @@
 .bottom-box {
   height: 70px;
   width: 100%;
-
+  color: #fdd687;
+  background: #744fda;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,6 +36,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: #fdd687;
 }
 
 .heading-sitemap {
@@ -113,6 +115,10 @@
   height: 100%;
 
   padding: 0 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .sitemap-logo img {

@@ -6,7 +6,7 @@ import teamInfo from './team.info';
 import socialClientInfo from './social.client.info';
 import socialService from './social.service';
 import getdate from './getDate';
-
+import founder from './founder';
 export default combineReducers({
   navbarIcon,
   clientData,
@@ -14,4 +14,5 @@ export default combineReducers({
   socialClient: socialClientInfo,
   socialService,
   getdate,
+  founder,
 });

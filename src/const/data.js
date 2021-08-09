@@ -18,4 +18,6 @@ export const data = {
   },
   SOCIAL_ABOUTUS:
     'MABB Social works as a catalyst for the businesses with retarded speed of growth. MABB Social has been an Outreach partner with some campaigns like exciting people to Go Green, or marketing campaign to market their exclusive services.MABB Social primarily analyzes the existing reach of your business or service and fill the loop holes up and come up with amazing solutions and ways to improve this condition and reach as many people as possible. MABB Social incorporates many updated techniques to market the product/service.',
+  GRAPHIC_ABOUTUS:
+    'MABB Graphics focus on front-end work of the service/business. MABB Graphics mainly includes designing of Logos, social media posts, web page designs, visiting card designs etc. MABB Graphics acts as a pillar for every other subsidiary of MABB group and influences progress in positive way.',
 };

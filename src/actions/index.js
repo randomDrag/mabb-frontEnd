@@ -6,6 +6,7 @@ import {
   ALL_TEAM_FETCH,
   NAVBAR_ICON,
   DATE,
+  ALL_FOUNDER,
 } from './const';
 
 export const navIcon = (data) => {
@@ -65,6 +66,17 @@ export const getDate = () => {
 
     dispatch({
       type: DATE,
+      payload: response.data,
+    });
+  };
+};
+
+export const AllFounder = () => {
+  return async (dispatch) => {
+    const response = await api.get('/mabbgroup/founder');
+
+    dispatch({
+      type: ALL_FOUNDER,
       payload: response.data,
     });
   };

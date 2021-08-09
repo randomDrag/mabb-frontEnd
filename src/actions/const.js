@@ -6,3 +6,5 @@ export const ALL_SOCIAL_CLIENT = 'SCA';
 export const ALL_SOCIAL_SERVICE = 'SCS';
 
 export const DATE = 'date';
+
+export const ALL_FOUNDER = 'ALF';
